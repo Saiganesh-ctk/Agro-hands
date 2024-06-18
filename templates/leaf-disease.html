@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Corrected path for leaf-disease.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaf-disease.css') }}">
+    <style>
+        body {
+            /* Corrected the background-image URL using url_for */
+            background-image: url("{{ url_for('static', filename='t1.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h2>Agro Hands</h2>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <!-- Use url_for to generate links -->
+            <li><a href="{{ url_for('home') }}"> Home</a></li>
+            <li><a href="{{ url_for('ygee') }}"> Crop yield prediction - GEE </a></li>
+            <li><a href="{{ url_for('ycsv') }}"> Crop yield prediction - CSV </a></li>
+            <li><a href="{{ url_for('leaf') }}"> Leaf Disease Prediction </a></li>
+        </ul>
+    </nav>
+</header>
+<div class="background">
+    <section class="main">
+        <h1>Leaf Disease Identification</h1>
+
+        <form class="data" method="post" action="/disc" enctype="multipart/form-data">
+            <input type="file" name="file"/>
+            <input type="submit" name="submit" value="submit"/>
+        </form>
+
+        <p>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <u><h2 style="color: MediumSeaGreen">{{ messages[0] }}</h2></u><br />
+            <br />
+            <img src="{{ messages[1] }}" width="300" height="255"/>
+            <br />
+            {% endif %}
+            {% endwith %}
+        </p>
+    </section>
+</div>
+</body>
+</html>

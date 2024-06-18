@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Agro hands</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h2>Agro Hands</h2>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="{{url_for('home')}}" method="get"> Home</a></li>
+          <li><a href="{{url_for('ygee')}}" method="get"> Crop yield prediction - GEE </a></li>
+          <li><a href="{{url_for('ycsv')}}" method="get"> Crop yield prediction - CSV </a></li>
+          <li><a href="{{url_for('leaf')}}" method="get">Leaf Disease Prediction </a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="background">
+      <section class="container">
+        <div class="testimonial mySwiper">
+          <div class="testi-content swiper-wrapper">
+            <div class="slide swiper-slide">
+              <div class="img">
+                <img
+                  src="static/images/slide1.png"
+                  style="width: 300px; height: 255px"
+                />
+              </div>
+
+              <div class="matter">
+                <h3 style="padding-bottom: 20px">
+                  An Interactive Web Application For Farmer
+                </h3>
+                <p>
+                  We aim to provide a helping hand to users practicing farming
+                  resulting in sustainable agricultural growth and development.
+                  There are 3 modules in our work used for crop yield prediction
+                  and crop disease prediction. We have used remote sensing
+                  satellite imagery, Machine learning, and deep learning
+                  concepts,enabling better-informed decision-making in
+                  agricultural management practices.
+                </p>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+              <div class="img">
+                <img
+                  src="static/images/slide2.png"
+                  style="width: 300px; height: 255px"
+                />
+              </div>
+
+              <div class="matter">
+                <h3 style="padding-bottom: 20px">Crop yield prediction</h3>
+                <p>
+                  This module uses a tabular dataset that takes into account the
+                  amount of fertilizer, pesticide usage, area, production, and
+                  season to predict the crop yield. Cross validation and feature
+                  randomization techniques have been implemented to improve the
+                  model accuracy.
+                </p>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+              <div class="img">
+                <img
+                  src="static/images/slide3.png"
+                  style="width: 300px; height: 255px"
+                />
+              </div>
+
+              <div class="matter">
+                <h3 style="padding-bottom: 20px">
+                  Crop yield prediction using remote sensing data
+                </h3>
+                <p>
+                  The decision-making capability is improved in this module with
+                  the help of remote sensing data. By integrating remote sensing
+                  data with meteorological data and building an ML model, the
+                  model gains a more comprehensive understanding of the factors
+                  influencing crop yield. This improved the accuracy of our
+                  model.
+                </p>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+              <div class="img">
+                <img
+                  src="static/images/slide4.png"
+                  style="width: 300px; height: 255px"
+                />
+              </div>
+
+              <div class="matter">
+                <h3 style="padding-bottom: 20px">Leaf disease prediction</h3>
+                <p>
+                  This module uses the leaf image of a plant as input to predict
+                  the crop disease if it is affected. The VGG-16 CNN model is
+                  used in this module. This deep learning technique has
+                  increased the model's accuracy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next nav-button"></div>
+          <div class="swiper-button-prev nav-button"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </div>
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

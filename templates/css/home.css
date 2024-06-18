@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Dosis:wght@200..800&display=swap");
+
+* {
+  border-style: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+li,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: aliceblue;
+  text-decoration: none;
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 300;
+  cursor: pointer;
+
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(23, 173, 123);
+}
+header {
+  background-color: darkgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+  color: greenyellow;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+  position: relative;
+}
+.background {
+  min-height: 100vh;
+  position: relative;
+}
+.background::before {
+  content: "";
+  background-image: url("backgroundimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.55;
+}
+.testimonial {
+  min-height: 380px;
+  position: relative;
+  max-width: 870px;
+  width: 100%;
+  row-gap: 30px;
+  overflow: hidden;
+  background-color: antiquewhite;
+}
+.container {
+  margin-top: 100px;
+  margin-left: 250px;
+  min-height: 400px;
+  width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(62, 113, 75);
+  position: relative;
+}
+.testimonial .slide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.slide .matter {
+  margin-top: 30px;
+  padding: 0 80px;
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+.slide .img {
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 60px;
+}
+.nav-button {
+  size: 20px;
+  color: #6e93f7;
+  transition: color 0.3s ease;
+}
+.nav-button:hover {
+  color: black;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}

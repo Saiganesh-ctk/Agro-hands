@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Dosis:wght@200..800&display=swap");
+
+* {
+  border-style: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+li,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: aliceblue;
+  text-decoration: none;
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 300;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(23, 173, 123);
+}
+header {
+  background-color: darkgreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+  color: greenyellow;
+}
+.forms {
+  justify-content: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin: 15px 30px;
+  font-size: 17px;
+  padding: 20px 20px 20px 20px;
+  background-color: rgb(137, 196, 137);
+  max-width: fit-content;
+  min-height: max-content;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  font-size: medium;
+  transition-duration: 0.4s;
+  border-radius: 30px;
+}
+
+.button:hover {
+  background-color: #04aa6d; /* Green */
+  color: white;
+}
+input {
+  padding: 5px;
+}
+.answer {
+  margin-left: 20px;
+}
+
+.form-data div {
+  margin-bottom: 10px; /* Adds space between each label-input pair */
+}
+
+.form-data label {
+  display: inline-block; /* Labels behave like block elements */
+  width: 100px; /* Adjust width as needed */
+  text-align: right; /* Aligns the text to the right */
+  margin-right: 10px; /* Adds space between label and input */
+}
+
+.form-data input[type="file"] {
+  width: calc(100% - 110px); /* Adjust width to fill the remaining space */
+}
+select {
+  padding: 5px;
+  border-radius: 3px;
+}
+.background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.background::before {
+  content: "";
+  background-image: url("backgroundimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0.55;
+}

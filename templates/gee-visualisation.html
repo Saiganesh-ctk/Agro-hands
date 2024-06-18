@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Agricultural Air Quality</title>
+    <!-- Corrected path for gee-visualisation.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gee-visualisation.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h2>Agro Hands</h2>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <!-- Use url_for to generate links -->
+          <li><a href="{{ url_for('home') }}"> Home</a></li>
+          <li><a href="{{ url_for('ygee') }}"> Crop yield prediction - GEE </a></li>
+          <li><a href="{{ url_for('ycsv') }}"> Crop yield prediction - CSV </a></li>
+          <li><a href="{{ url_for('leaf') }}"> Leaf Disease Prediction </a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="background">
+      <section class="main">
+        <div class="content">
+          <h2 style="padding-bottom: 20px">Data inference</h2>
+          <div class="area">
+            <h3>Area_in_Acres</h3>
+            <p>{{ data['Area_in_Acres'][0] }}</p>
+          </div>
+
+          <div class="area">
+            <h3>Area_in_Hectare</h3>
+            <p>{{ data['Area_in_Hectare'][0] }}</p>
+          </div>
+
+          <div class="area">
+            <h3>Mean_NO2_Value</h3>
+            <p>{{ data['Mean_NO2_Value'][0] }}</p>
+          </div>
+        </div>
+        <div class="content">
+          <h2 style="padding-bottom: 20px">Images</h2>
+          <div
+            style="text-align: center"
+            class="images-h"
+          >
+            <div class="inference">
+              <!-- Corrected path for image source -->
+              <img
+                src="{{ url_for('static', filename='images/ndvi.jpg') }}"
+                style="width: 300px; height: 255px; margin-right: 20px"
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              >
+ NDVI</textarea
+              >
+            </div>
+            <div class="inference">
+              <img
+                src="{{ url_for('static', filename='images/ndmi.jpg') }}"
+                style="width: 300px; height: 255px; margin-right: 20px"
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              >
+NDWI</textarea
+              >
+            </div>
+            <div class="inference">
+              <img
+                src="{{ url_for('static', filename='images/clus.png') }}"
+                style="width: 300px; height: 255px; margin-right: 20px"
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+              >
+K-MEANS CLUSTER</textarea
+              >
+            </div>
+          </div>
+          <div
+            class="area"
+            style="padding-top: 40px"
+          >
+            <h3>Agricultural Air Quality</h3>
+            <!-- Corrected variable syntax -->
+            <p>{{ agricultural_quality }}</p>
+          </div>
+          <div class="area">
+            <h3>Air Quality Information</h3>
+            <!-- Corrected variable syntax -->
+            <p>{{ air_quality }}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+s

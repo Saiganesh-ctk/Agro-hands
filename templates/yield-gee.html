@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>GEE</title>
+    <!-- Corrected path for yield-gee.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/yield-gee.css') }}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h2>Agro Hands</h2>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <!-- Use url_for to generate links -->
+          <li><a href="{{ url_for('home') }}"> Home</a></li>
+          <li><a href="{{ url_for('ygee') }}"> Crop yield prediction - GEE </a></li>
+          <li><a href="{{ url_for('ycsv') }}"> Crop yield prediction - CSV </a></li>
+          <li><a href="{{ url_for('leaf') }}"> Leaf Disease Prediction </a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="background">
+      <section class="content">
+        <div>
+          <h2>Google earth engine</h2>
+          <button onclick="executeGee()">Click for GEE</button>
+        </div>
+        <div>
+          <h2>Google collab</h2>
+          <button onclick="executeColab()">Click for Colab</button>
+        </div>
+        <button class="submit" onclick="go()">Submit</button>
+      </section>
+    </div>
+
+    <script>
+      function go() {
+        var nextPage = "/geevisuali";
+        window.location.href = nextPage;
+      }
+      function executeGee() {
+        fetch("/gee")
+          .then((response) => response.text())
+          .then((data) => console.log(data));
+      }
+
+      function executeColab() {
+        fetch("/colab")
+          .then((response) => response.text())
+          .then((data) => console.log(data));
+      }
+    </script>
+  </body>
+</html>
